@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
+import userRoutes from "./routes/user.routes"
 
 dotenv.config();
 
@@ -12,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 //routes
-// app.use("/api/userRoutes",);
+app.use("/api/user", userRoutes);
 
 app.get('/', (req, res) => {
     res.json({ message: "hello hashX" })
